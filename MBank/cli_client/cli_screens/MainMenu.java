@@ -14,7 +14,9 @@ public class MainMenu {
             int input = Integer.parseInt(br.readLine());
             
             switch (input) {
-            case 1: System.out.println("hello");
+            case 1: {
+            	System.out.println("All admin actions can be done through the swing GUI. Please use it, it's ugly but better.");
+            	showMainMenu();             }
             case 2: new ClientMain();
             case 3: System.exit(1);
             default: System.out.println("You have't entered a correct option. Please choose 1-3");
