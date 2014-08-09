@@ -19,6 +19,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import action_listeners.AllActivitiesListener;
 import action_listeners.ClientActivitiesListener;
 import action_listeners.LogoutListener;
 import action_listeners.OpenClientEditListener;
@@ -304,6 +305,8 @@ public class MainScreen extends JFrame {
         cs.gridy = 8;
         cs.gridheight = GridBagConstraints.RELATIVE;
         mainPanel.add(activitiesPane, cs);
+        
+        bankActivities.addActionListener(new AllActivitiesListener(this));
         
         //logout pane
         JPanel logoutPanel = new JPanel(new BorderLayout());

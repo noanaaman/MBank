@@ -25,7 +25,7 @@ public class ClientActivitiesListener implements ActionListener {
 			new ViewClientActivities(mainScreen);
 			
 		} catch (MBankException e) {
-			JOptionPane.showMessageDialog(mainScreen, "Unable to display client activities. Please make sure you entered a valid client ID.", "Fetching Client Deposits Failed", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(mainScreen, "Unable to display client activities. Please make sure you entered a valid client ID.", "Fetching Client Activities Failed", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		}
 

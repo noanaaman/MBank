@@ -130,7 +130,7 @@ public class ClientAction extends Action {
 		DepositType type = deposit.getType();
 		if (type == DepositType.LONG) {
 			Account account = accountsManager.queryAccountByClient(id, con);
-			double preOpenCommission = Double.parseDouble(propertyManager.query("pre_open_fee", con).getProp_value());
+			double preOpenCommission = (Double.parseDouble(propertyManager.query("pre_open_fee", con).getProp_value()))/100;
 			double preOpenFee = preOpenCommission * deposit.getBalance();
 			deposit.setBalance(deposit.getBalance() - preOpenFee);
 			account.setBalance(deposit.getBalance() + account.getBalance());
