@@ -6,6 +6,12 @@ public class Property {
 	private String prop_value;
 	private String description;
 	
+	
+	
+	public Property() {
+		super();
+	}
+
 	public Property(String prop_key, String prop_value, String description)	{
 		this.prop_key = prop_key;
 		this.prop_value = prop_value;

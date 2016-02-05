@@ -206,7 +206,7 @@ public class DepositDBManager implements DepositManager
 	public ArrayList<Deposit> queryDepositsByDate(Calendar closingDate, Connection con) {
 		try
 		{
-			String sql = "SELECT * FROM " + tableName + " WHERE closing_date = ?";			
+			String sql = "SELECT * FROM " + tableName + " WHERE closing_date <= ?";			
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setDate(1, new Date(closingDate.getTimeInMillis()));
 			ps.execute();

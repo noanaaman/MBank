@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="MBank">
+        <wb-resource deploy-path="/" source-path="/phase1"/>
+        <wb-resource deploy-path="/" source-path="/cli_client"/>
+    </wb-module>
+</project-modules>

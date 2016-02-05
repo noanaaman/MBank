@@ -77,6 +77,10 @@ public abstract class Action {
 	public Property viewSystemProperty(String propertyName) {
 		return propertyManager.query(propertyName, con);
 	}
+	
+	public Deposit viewDepositById(Long depositId) throws MBankException {
+		return depositManager.query(depositId, con);
+	}
 
 	public long getId() {
 		return id;

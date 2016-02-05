@@ -22,14 +22,9 @@ public class Main {
                         loginDlg.setVisible(true);
                         // if logon successfully
                         if(loginDlg.isSucceeded()){
-                            try {
-								AdminAction adminAction = MBank.getInstance().adminLogin();
-								new MainScreen(adminAction);
-								frame.dispose();
-							} catch (SQLException | MBankException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
-							}
+                            AdminAction adminAction = MBank.getInstance().adminLogin();
+							new MainScreen(adminAction);
+							frame.dispose();
                         }
                     }
                 });

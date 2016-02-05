@@ -1,6 +1,7 @@
 package actions_classes;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import enums.ClientType;
@@ -8,6 +9,7 @@ import enums.DepositType;
 import bank_beans.Account;
 import bank_beans.Activity;
 import bank_beans.Deposit;
+import bank_beans.Property;
 import bank_exceptions.MBankException;
 
 public class ClientAction extends Action {
@@ -142,6 +144,24 @@ public class ClientAction extends Action {
 		}
 		else throw new MBankException("You Cannot pre-open a short deposit.");
 		
+	}
+	
+	public ArrayList<Property> viewAllSystemProperties() throws MBankException {
+		ArrayList<Property> systemProperties = propertyManager.queryAllProperties(con);
+		//remove the admin username and password for clients
+		for (int i = 0; i < systemProperties.size(); i++) {
+			String name = systemProperties.get(i).getProp_key();
+			if (name.equals("admin_username")) {
+				systemProperties.remove(i);
+			}
+		}
+		for (int i = 0; i < systemProperties.size(); i++) {
+			String name = systemProperties.get(i).getProp_key();
+			if (name.equals("admin_password")) {
+				systemProperties.remove(i);
+			}
+		}
+		return systemProperties;
 	}
 	
 	

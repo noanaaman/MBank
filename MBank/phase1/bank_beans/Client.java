@@ -14,6 +14,12 @@ public class Client {
 	private String comment;
 	
 	
+	
+	public Client() {
+		super();
+	}
+
+
 	public Client(long client_id, String client_name, String password,
 			ClientType type, String address, String email, String phone,
 			String comment)

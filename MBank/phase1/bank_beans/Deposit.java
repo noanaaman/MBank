@@ -14,6 +14,12 @@ public class Deposit {
 	private Calendar opening_date;
 	private Calendar closing_date;
 	
+	
+	public Deposit() {
+		super();
+		
+	}
+
 	public Deposit(long deposit_id, long client_id, double balance, DepositType type, double estimated_balance, Calendar opening_date, Calendar closing_date) {
 		this.deposit_id = deposit_id;
 		this.client_id = client_id;

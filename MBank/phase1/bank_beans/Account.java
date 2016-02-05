@@ -7,6 +7,11 @@ public class Account {
 	private String credit_limit;
 	private String comment;
 
+		
+	public Account() {
+		super();
+	}
+
 	public Account(long account_id, long client_id, double balance, String credit_limit, String comment) {
 		this.account_id = account_id;
 		this.client_id = client_id;

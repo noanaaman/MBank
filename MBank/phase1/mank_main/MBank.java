@@ -41,14 +41,19 @@ public class MBank {
 		depositManager = new DepositDBManager();
 		activityManager = new ActivityDBManager();
 		propertyManager = new PropertyDBManager();
-		con = DriverManager.getConnection("jdbc:derby://localhost:1527/MBank;");
+		con = DriverManager.getConnection("jdbc:derby://localhost:1527/MBank;create=false");
 		int numberOfConnections = Integer.parseInt(propertyManager.query("number_of_connections", con).getProp_value());
 		connectionPool = new ConnectionPool("jdbc:derby://localhost:1527/MBank;create=false",numberOfConnections);
 	}
 
-	public static MBank getInstance() throws SQLException, MBankException {
+	public static MBank getInstance() {
 		if (myBank == null) {
-			myBank = new MBank();
+			try {
+				myBank = new MBank();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		return myBank;
@@ -75,8 +80,7 @@ public class MBank {
 
 	}
 
-	public ClientAction clientLogin(long clientId, String password)
-			throws MBankException {
+	public ClientAction clientLogin(long clientId, String password) throws MBankException {
 		String clientPassword = clientManager.query(clientId, con).getPassword();
 		if (password.equals(clientPassword)) {
 			Connection con = myBank.connectionPool.checkout();

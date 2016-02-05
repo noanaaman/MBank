@@ -37,8 +37,8 @@ public class InitiateDB {
                 
                 //populate system properties table
                 statement.executeUpdate("insert into Properties values ('regular_deposit_rate','10000','New regular client deposit rate ($).')");
-                statement.executeUpdate("insert into Properties values ('gold_deposit_rate','100000', 'New gold client deposit rate (?).' )");
-                statement.executeUpdate("insert into Properties values ('platinum_deposit_rate','1000000','New platinum client deposit rate (?).')");
+                statement.executeUpdate("insert into Properties values ('gold_deposit_rate','100000', 'New gold client deposit rate ($).' )");
+                statement.executeUpdate("insert into Properties values ('platinum_deposit_rate','1000000','New platinum client deposit rate ($).')");
                 statement.executeUpdate("insert into Properties values ('regular_deposit_commission','1.5','Regular client commission rate for deposit opening (%).')");
                 statement.executeUpdate("insert into Properties values ('gold_deposit_commission','1.0','Gold client commission rate for deposit opening (%).')");
                 statement.executeUpdate("insert into Properties values ('platinum_deposit_commission','0.5','Platinum client commission rate for deposit opening (%).')");
